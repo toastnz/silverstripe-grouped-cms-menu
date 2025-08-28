@@ -2,23 +2,24 @@
 
 namespace Symbiote\GroupedCmsMenu\Admin;
 
-use SilverStripe\Admin\LeftAndMain;
-use SilverStripe\Admin\LeftAndMainExtension;
-use SilverStripe\Core\Convert;
-use SilverStripe\View\Requirements;
-use SilverStripe\ORM\ArrayList;
-use SilverStripe\ORM\GroupedList;
-use SilverStripe\View\ArrayData;
-use SilverStripe\ORM\FieldType\DBField;
-use SilverStripe\ORM\FieldType\DBText;
 use SilverStripe\ORM\SS_List;
+use SilverStripe\Core\Convert;
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\Core\Extension;
+use SilverStripe\View\ArrayData;
+use SilverStripe\ORM\GroupedList;
+use SilverStripe\Admin\LeftAndMain;
+use SilverStripe\View\Requirements;
+use SilverStripe\ORM\FieldType\DBText;
+use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\Admin\LeftAndMainExtension;
 
 /**
  * Decorates {@link LeftAndMain} to provide a grouped/nested CMS menu.
  *
  * @package grouped-cms-menu
  */
-class GroupedCmsMenu extends LeftAndMainExtension
+class GroupedCmsMenu extends Extension
 {
 
     /**
