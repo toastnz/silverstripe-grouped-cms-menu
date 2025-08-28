@@ -4,14 +4,14 @@ namespace Symbiote\GroupedCmsMenu\Admin;
 
 use SilverStripe\ORM\SS_List;
 use SilverStripe\Core\Convert;
-use SilverStripe\ORM\ArrayList;
 use SilverStripe\Core\Extension;
-use SilverStripe\View\ArrayData;
-use SilverStripe\ORM\GroupedList;
+use SilverStripe\Model\ArrayData;
 use SilverStripe\Admin\LeftAndMain;
 use SilverStripe\View\Requirements;
+use SilverStripe\Model\List\ArrayList;
 use SilverStripe\ORM\FieldType\DBText;
 use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\Model\List\GroupedList;
 use SilverStripe\Admin\LeftAndMainExtension;
 
 /**
@@ -40,9 +40,9 @@ class GroupedCmsMenu extends Extension
      *
      * @return void
      */
-    public function init()
+    public function onInit()
     {
-        parent::init();
+        // parent::onInit();
 
         Requirements::css('symbiote/silverstripe-grouped-cms-menu:client/dist/css/GroupedCmsMenu.css');
     }
@@ -182,7 +182,7 @@ class GroupedCmsMenu extends Extension
      * @param SS_List $children
      * @return ArrayList
      */
-    public function filterChildren(SS_List $children)
+    public function filterChildren(ArrayList $children)
     {
         // Only deal with children if we've explicitly instructed our classes as such
         $config = $this->getOwner()->config();
